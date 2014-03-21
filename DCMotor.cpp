@@ -8,7 +8,7 @@
 * @param _enbPin enable pin B of h-bridge
 * @param _speedPin PWM output pin
 */
-DCMotor::DCMotor(uint_8 _enaPin, uint8_t _enbPin, uint8_t _speedPin) {
+DCMotor::DCMotor(uint8_t _enaPin, uint8_t _enbPin, uint8_t _speedPin) {
 	enaPin = _enaPin;
 	enbPin = _enbPin;
 	speedPin = _speedPin;
@@ -28,11 +28,11 @@ DCMotor::DCMotor(uint_8 _enaPin, uint8_t _enbPin, uint8_t _speedPin) {
 *
 * @param _speed PWM value output ranging from -255 to 255
 */
-void DCMotor::setOutput(uint_8 _speed) {
+void DCMotor::setOutput(uint8_t _speed) {
 	speed = _speed;
 	if (speed > 0) {
 		goForward();
-		analogWrite(speed);
+		analogWrite(speedPin, speed);
 	} else if (speed < 0) {
 		goBackward();
 		analogWrite(speedPin, abs(speed));
