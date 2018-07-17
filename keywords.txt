@@ -1,5 +1,5 @@
 DCMotor	KEYWORD1
 
-setOutput KEYWORD2
-stop KEYWORD2
-coast KEYWORD2
+setOutput	KEYWORD2
+stop	KEYWORD2
+coast	KEYWORD2
